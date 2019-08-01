@@ -9,19 +9,23 @@ public class SelectionSorter extends Sorter {
 	//   progress on the graph.
 	@Override
 	void sort(int[] array, SortingVisualizer display) {
-		//1. make a for loop to iterate through all but the last 
-		//   element of the array
 		
-			//2. create an integer called index and set it equal to i
-			
-			//3. make another for loop that starts at i + 1 and
-			//   goes through the entire array
-			
-				//4. if the array element at j is less than the 
-				//   element at index, then set index equal to j
-				
-			//5. swap the array element at index with the array element at i
-			
-		
-	}
+	        int n = array.length; 
+	  
+	        // One by one move boundary of unsorted subarray 
+	        for (int i = 0; i < n-1; i++) 
+	        { 
+	            // Find the minimum element in unsorted array 
+	            int min_idx = i; 
+	            for (int j = i+1; j < n; j++) 
+	                if (array[j] < array[min_idx]) 
+	                    min_idx = j; 
+	  
+	            // Swap the found minimum element with the first 
+	            // element 
+	            int temp = array[min_idx]; 
+	            array[min_idx] = array[i]; 
+	            array[i] = temp; 
+	        } 
+	    } 
 }

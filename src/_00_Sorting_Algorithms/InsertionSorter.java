@@ -10,13 +10,19 @@ public class InsertionSorter extends Sorter {
 	//   progress on the graph.
 	@Override
 	void sort(int[] array, SortingVisualizer display) {		
-		//1. make a for loop that starts at 1 and goes through 
-		// the length of the array 
-
-			//2. make another for loop that starts at i and counts down
-        	//   while j is greater than 0
-
-				//3. if the element at j is less than the element at j - 1,
-            	//   then swap them
+		        int n = array.length; 
+		        for (int i = 1; i < n; ++i) { 
+		            int key = array[i]; 
+		            int j = i - 1; 
+		  
+		            /* Move elements of arr[0..i-1], that are 
+		               greater than key, to one position ahead 
+		               of their current position */
+		            while (j >= 0 && array[j] > key) { 
+		                array[j + 1] = array[j]; 
+		                j = j - 1; 
+		            } 
+		            array[j + 1] = key; 
+		        } 
 	}
 }
