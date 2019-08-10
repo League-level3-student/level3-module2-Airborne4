@@ -29,6 +29,7 @@ public class BogoSorter extends Sorter {
 		    // To generate permuatation of the array 
 		    void shuffle(int[] array) 
 		    { 
+				int n = 0;
 				// Math.random() returns a double positive 
 		         // value, greater than or equal to 0.0 and 
 		         // less than 1.0. 
